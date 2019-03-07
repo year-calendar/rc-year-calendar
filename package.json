@@ -31,6 +31,7 @@
   "homepage": "https://github.com/year-calendar/react-year-calendar",
   "dependencies": {
     "js-year-calendar": "^1.0.0-alpha.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4"
   },
   "devDependencies": {
