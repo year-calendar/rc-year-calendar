@@ -40,7 +40,7 @@ export default class Calendar extends React.Component {
         // Events
         onDayClick: Propsypes.func,
         onDayContextMenu: Propsypes.func,
-        onDayHover: Propsypes.func,
+        onDayEnter: Propsypes.func,
         onDayLeave: Propsypes.func,
         onRenderEnd: Propsypes.func,
         onSelectRange: Propsypes.func,
@@ -72,15 +72,14 @@ export default class Calendar extends React.Component {
             maxDate: this.props.maxDate,
             minDate: this.props.minDate,
             roundRangeLimits: this.props.roundRangeLimits,
-            selectRange: this.props.selectRange,
             style: this.props.style,
             weekStart: this.props.weekStart,
-            startYear: this.props.year,
+            startYear: this.props.year != null ? this.props.year : this.props.defaultYear,
 
             // Events
             clickDay: this.props.onDayClick,
             dayContextMenu: this.props.onDayContextMenu,
-            mouseOnDay: this.props.onDayHover,
+            mouseOnDay: this.props.onDayEnter,
             mouseOutDay: this.props.onDayLeave,
             renderEnd: this.props.onRenderEnd,
             selectRange: this.props.onRangeSelected,
@@ -116,7 +115,6 @@ export default class Calendar extends React.Component {
         if (nextProps.maxDate != this.props.maxDate) ops.push(() => cal.setMaxDate(nextProps.maxDate, false));
         if (nextProps.minDate != this.props.minDate) ops.push(() => cal.setMinDate(nextProps.minDate, false));
         if (nextProps.roundRangeLimits != this.props.roundRangeLimits) ops.push(() => cal.setRoundRangeLimits(nextProps.roundRangeLimits, false));
-        if (nextProps.selectRange != this.props.selectRange) ops.push(() => cal.setSelectRange(nextProps.selectRange, false));
         if (nextProps.style != this.props.style) ops.push(() => cal.setStyle(nextProps.style, false));
         if (nextProps.weekStart != this.props.weekStart) ops.push(() => cal.setWeekStart(nextProps.weekStart, false));
         if (nextProps.year != this.props.year) ops.push(() => cal.setYear(nextProps.year));
@@ -124,7 +122,7 @@ export default class Calendar extends React.Component {
         // Events
         if (nextProps.onDayClick != this.props.onDayClick) this.updateEvent('clickDay', this.props.onDayClick, nextProps.onDayClick);
         if (nextProps.onDayContextMenu != this.props.onDayContextMenu) this.updateEvent('dayContextMenu', this.props.onDayContextMenu, nextProps.onDayContextMenu);
-        if (nextProps.onDayHover != this.props.onDayHover) this.updateEvent('mouseOnDay', this.props.onDayHover, nextProps.onDayHover);
+        if (nextProps.onDayEnter != this.props.onDayEnter) this.updateEvent('mouseOnDay', this.props.onDayEnter, nextProps.onDayEnter);
         if (nextProps.onDayLeave != this.props.onDayLeave) this.updateEvent('mouseOutDay', this.props.onDayLeave, nextProps.onDayLeave);
         if (nextProps.onRenderEnd != this.props.onRenderEnd) this.updateEvent('renderEnd', this.props.onRenderEnd, nextProps.onRenderEnd);
         if (nextProps.onRangeSelected != this.props.onRangeSelected) this.updateEvent('selectRange', this.props.onRangeSelected, nextProps.onRangeSelected);
