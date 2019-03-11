@@ -1,50 +1,50 @@
 import React from "react";
-import Propsypes from 'prop-types';
+import PropTypes from 'prop-types';
 import JsCalendar from "../node_modules/js-year-calendar/dist/js-year-calendar.js";
 
 export default class Calendar extends React.Component {
     static propsypes = {
         // opsions
-        allowOverlap: Propsypes.bool,
-        alwaysHalfDay: Propsypes.bool,
-        contextMenuItems: Propsypes.arrayOf(Propsypes.shape({
-            text: Propsypes.string,
-            click: Propsypes.func,
-            visible: Propsypes.oneOfType([Propsypes.bool, Propsypes.func]),
-            items: Propsypes.array
+        allowOverlap: PropTypes.bool,
+        alwaysHalfDay: PropTypes.bool,
+        contextMenuItems: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string,
+            click: PropTypes.func,
+            visible: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+            items: PropTypes.array
         })),
-        customDayRenderer: Propsypes.func,
-        customDataSourceRenderer: Propsypes.func,
-        dataSource: Propsypes.arrayOf(Propsypes.shape({
-            startDate: Propsypes.instanceOf(Date),
-            endDate: Propsypes.instanceOf(Date),
-            name: Propsypes.string
+        customDayRenderer: PropTypes.func,
+        customDataSourceRenderer: PropTypes.func,
+        dataSource: PropTypes.arrayOf(PropTypes.shape({
+            startDate: PropTypes.instanceOf(Date),
+            endDate: PropTypes.instanceOf(Date),
+            name: PropTypes.string
         })),
-        disabledDays: Propsypes.arrayOf(Propsypes.instanceOf(Date)),
-        disabledWeekDays: Propsypes.arrayOf(Propsypes.number),
-        displayDisabledDataSource: Propsypes.bool,
-        displayHeader: Propsypes.bool,
-        displayWeekNumber: Propsypes.bool,
-        enableContextMenu: Propsypes.bool,
-        enableRangeSelection: Propsypes.bool,
-        hiddenWeekDays: Propsypes.arrayOf(Propsypes.number),
-        language: Propsypes.string,
-        maxDate: Propsypes.instanceOf(Date),
-        minDate: Propsypes.instanceOf(Date),
-        roundRangeLimits: Propsypes.bool,
-        selectRange: Propsypes.bool,
-        style: Propsypes.string,
-        weekStart: Propsypes.number,
-        year: Propsypes.number,
+        disabledDays: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+        disabledWeekDays: PropTypes.arrayOf(PropTypes.number),
+        displayDisabledDataSource: PropTypes.bool,
+        displayHeader: PropTypes.bool,
+        displayWeekNumber: PropTypes.bool,
+        enableContextMenu: PropTypes.bool,
+        enableRangeSelection: PropTypes.bool,
+        hiddenWeekDays: PropTypes.arrayOf(PropTypes.number),
+        language: PropTypes.string,
+        maxDate: PropTypes.instanceOf(Date),
+        minDate: PropTypes.instanceOf(Date),
+        roundRangeLimits: PropTypes.bool,
+        selectRange: PropTypes.bool,
+        style: PropTypes.string,
+        weekStart: PropTypes.number,
+        year: PropTypes.number,
 
         // Events
-        onDayClick: Propsypes.func,
-        onDayContextMenu: Propsypes.func,
-        onDayEnter: Propsypes.func,
-        onDayLeave: Propsypes.func,
-        onRenderEnd: Propsypes.func,
-        onSelectRange: Propsypes.func,
-        onYearChanged: Propsypes.func
+        onDayClick: PropTypes.func,
+        onDayContextMenu: PropTypes.func,
+        onDayEnter: PropTypes.func,
+        onDayLeave: PropTypes.func,
+        onRenderEnd: PropTypes.func,
+        onSelectRange: PropTypes.func,
+        onYearChanged: PropTypes.func
     };
 
     constructor(props) {
