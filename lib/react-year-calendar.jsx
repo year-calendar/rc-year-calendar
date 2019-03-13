@@ -15,11 +15,14 @@ export default class Calendar extends React.Component {
         })),
         customDayRenderer: PropTypes.func,
         customDataSourceRenderer: PropTypes.func,
-        dataSource: PropTypes.arrayOf(PropTypes.shape({
-            startDate: PropTypes.instanceOf(Date),
-            endDate: PropTypes.instanceOf(Date),
-            name: PropTypes.string
-        })),
+        dataSource: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.shape({
+                startDate: PropTypes.instanceOf(Date),
+                endDate: PropTypes.instanceOf(Date),
+                name: PropTypes.string
+            })), 
+            PropTypes.func
+        ]),
         disabledDays: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
         disabledWeekDays: PropTypes.arrayOf(PropTypes.number),
         displayDisabledDataSource: PropTypes.bool,
@@ -29,6 +32,7 @@ export default class Calendar extends React.Component {
         enableRangeSelection: PropTypes.bool,
         hiddenWeekDays: PropTypes.arrayOf(PropTypes.number),
         language: PropTypes.string,
+        loadingTemplate: PropTypes.string,
         maxDate: PropTypes.instanceOf(Date),
         minDate: PropTypes.instanceOf(Date),
         roundRangeLimits: PropTypes.bool,
@@ -69,6 +73,7 @@ export default class Calendar extends React.Component {
             enableRangeSelection: this.props.enableRangeSelection,
             hiddenWeekDays: this.props.hiddenWeekDays,
             language: this.props.language,
+            loadingTemplate: this.props.loadingTemplate,
             maxDate: this.props.maxDate,
             minDate: this.props.minDate,
             roundRangeLimits: this.props.roundRangeLimits,
@@ -112,6 +117,7 @@ export default class Calendar extends React.Component {
         if (nextProps.enableRangeSelection != this.props.enableRangeSelection) ops.push(() => cal.setEnableRangeSelection(nextProps.enableRangeSelection, false));
         if (nextProps.hiddenWeekDays != this.props.hiddenWeekDays) ops.push(() => cal.setHiddenWeekDays(nextProps.hiddenWeekDays, false));
         if (nextProps.language != this.props.language) ops.push(() => cal.setLanguage(nextProps.language, false));
+        if (nextProps.loadingTemplate != this.props.loadingTemplate) ops.push(() => cal.setLoadingTemplate(nextProps.loadingTemplate, false));
         if (nextProps.maxDate != this.props.maxDate) ops.push(() => cal.setMaxDate(nextProps.maxDate, false));
         if (nextProps.minDate != this.props.minDate) ops.push(() => cal.setMinDate(nextProps.minDate, false));
         if (nextProps.roundRangeLimits != this.props.roundRangeLimits) ops.push(() => cal.setRoundRangeLimits(nextProps.roundRangeLimits, false));

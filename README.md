@@ -43,7 +43,7 @@ The props are the following
 | contextMenuItems | Specifies the items of the default context menu. | array | `[]` |
 | customDayRenderer | Specify a custom renderer for data source. Works only with the style set to "custom". This function is called duringender for each day containing at least one event. | Render function | `null` |
 | customDataSourceRenderer | Specify a custom renderer for days. This function is called during render for each day. | Render function | `null` |
-| dataSource | The elements that must be displayed on the calendar. | array | `[]` |
+| dataSource | The elements that must be displayed on the calendar. | array or function | `[]` |
 | disabledDays | The days that must be displayed as disabled. | array | `[]` |
 | disabledWeekDays | The days of the week that must be displayed as disabled (0 for Sunday, 1 for Monday, etc.). | array | `[]` |
 | displayDisabledDataSource | Specifies whether the data source must be rendered on disabled days. | boolean | `false` |
@@ -53,6 +53,7 @@ The props are the following
 | enableRangeSelection | Specifies whether the range selection is enabled. | boolean | `false` |
 | hiddenWeekDays | The days of the week that must not be displayed (0 for Sunday, 1 for Monday, etc.). | array | `[]` |
 | language | The language/culture used for calendar rendering. | String | `en` |
+| loadingTemplate | A custom loading template | String | `null` |
 | maxDate | The date until which days are enabled. | Date | `null` |
 | minDate | The date from which days are enabled. | Date | `null` |
 | roundRangeLimits | Specifies whether the beginning and the end of each range should be displayed as rounded cells. | boolean | `false` |

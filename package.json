@@ -1,7 +1,7 @@
 {
   "name": "react-year-calendar",
   "version": "1.0.0-alpha.1",
-  "description": "React wrapper for the js-year-calendar",
+  "description": "Official react wrapper for the year-calendar widget",
   "main": "./dist/react-year-calendar.js",
   "scripts": {
     "watch": "babel --watch lib --out-dir dist",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/year-calendar/react-year-calendar",
   "dependencies": {
-    "js-year-calendar": "^1.0.0-alpha.2",
+    "js-year-calendar": "^1.0.0-alpha.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.4"
   },
