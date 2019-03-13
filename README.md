@@ -1,4 +1,4 @@
-# react-year-calendar
+# rc-year-calendar
 
 A fully customizable year calendar widget
 
@@ -16,7 +16,7 @@ You can get the widget using the following methods:
 You can create a calendar using the following javascript code :
 ```
 // Import
-import Calendar from 'react-year-calendar';
+import Calendar from 'rc-year-calendar';
 
 // Render
 render() {
