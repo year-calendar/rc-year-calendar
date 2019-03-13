@@ -1,8 +1,8 @@
 {
-  "name": "react-year-calendar",
+  "name": "rc-year-calendar",
   "version": "1.0.0-alpha.1",
   "description": "Official react wrapper for the year-calendar widget",
-  "main": "./dist/react-year-calendar.js",
+  "main": "./dist/rc-year-calendar.js",
   "scripts": {
     "watch": "babel --watch lib --out-dir dist",
     "build": "babel lib --out-dir dist",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/year-calendar/react-year-calendar.git"
+    "url": "git+https://github.com/year-calendar/rc-year-calendar.git"
   },
   "keywords": [
     "calendar",
@@ -26,9 +26,9 @@
   "author": "Paul-DS",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/year-calendar/react-year-calendar/issues"
+    "url": "https://github.com/year-calendar/rc-year-calendar/issues"
   },
-  "homepage": "https://github.com/year-calendar/react-year-calendar",
+  "homepage": "https://github.com/year-calendar/rc-year-calendar",
   "dependencies": {
     "js-year-calendar": "^1.0.0-alpha.3",
     "prop-types": "^15.7.2",
