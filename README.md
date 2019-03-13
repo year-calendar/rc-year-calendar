@@ -6,9 +6,10 @@ A fully customizable year calendar widget
 
 ## Installation
 You can get the widget using the following methods:
-- From the [GitHub repository](https://github.com/year-calendar/react-year-calendar/releases)
-- From the Node package manager, using the following command: `npm install react-year-calendar`
-- From the CDN, by adding the following script directly in your HTML page: `<script src="https://unpkg.com/react-year-calendar@latest/dist/year-calendar.js"></script>`
+- From the [GitHub repository](https://github.com/year-calendar/rc-year-calendar/releases)
+- From the Node package manager, using the following command: `npm install rc-year-calendar`
+- From the Node package manager, using the following command: `npm install rc-year-calendar`
+- From the CDN, by adding the following script directly in your HTML page: `<script src="https://unpkg.com/rc-year-calendar@latest/dist/year-calendar.js"></script>`
 
 ## Usage
 
