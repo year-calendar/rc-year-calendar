@@ -4,8 +4,9 @@
   "description": "Official react wrapper for the year-calendar widget",
   "main": "./dist/rc-year-calendar.js",
   "scripts": {
-    "watch": "babel --watch lib --out-dir dist",
-    "build": "babel lib --out-dir dist",
+    "watch": "rollup -c --watch",
+    "build": "rollup -c && npm run build:css",
+    "build:css": "cpx node_modules/js-year-calendar/dist/js-year-calendar.css dist/rc-year-calendar.css && cpx node_modules/js-year-calendar/dist/js-year-calendar.min.css dist/rc-year-calendar.min.css",
     "prepare": "npm run build"
   },
   "pre-commit": [
@@ -30,7 +31,9 @@
   },
   "homepage": "https://github.com/year-calendar/rc-year-calendar",
   "dependencies": {
-    "js-year-calendar": "^1.0.0-alpha.3",
+    "js-year-calendar": "^1.0.0-alpha.3"
+  },
+  "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.4"
   },
@@ -38,7 +41,14 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.3.1"
+    "@babel/preset-env": "^7.3.1",
+    "cpx": "^1.5.0",
+    "rollup": "^1.6.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-uglify": "^6.0.2"
   }
 }

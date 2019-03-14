@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import JsCalendar from "../node_modules/js-year-calendar/dist/js-year-calendar.js";
+import JsCalendar from "js-year-calendar";
 
 export default class Calendar extends React.Component {
-    static propsypes = {
+    static propsTypes = {
         // opsions
         allowOverlap: PropTypes.bool,
         alwaysHalfDay: PropTypes.bool,
