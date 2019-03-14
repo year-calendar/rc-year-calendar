@@ -76,7 +76,7 @@ The props are the following
 | onDayContextMenu | Function fired when a day is right clicked. | `{ date, events }` |
 | onDayEnter | Function fired when the mouse enter on a day. | `{ date, events }` |
 | onDayLeave | Function fired when the mouse leaves a day. | `{ date, events }` |
-| renderEnd | Function fired when the calendar rendering is ended. | `{ currentYear }` |
+| onRenderEnd | Function fired when the calendar rendering is ended. | `{ currentYear }` |
 | onRangeSelected | Function fired when a date range is selected. | `{ startDate, endDate }` |
 | onYearChanged | Function fired when the visible year of the calendar is changed. | `{ currentYear }` |
 
