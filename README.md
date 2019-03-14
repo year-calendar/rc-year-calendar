@@ -1,6 +1,6 @@
 # rc-year-calendar
 
-A fully customizable year calendar widget
+Official wrapper for the year-calendar widget. https://year-calendar.github.io/
 
 ![alt tag](http://www.bootstrap-year-calendar.com/img/calendar.png)
 
@@ -83,4 +83,4 @@ The props are the following
 
 ## What next
 
-Check the [examples](/examples) pages and the [documentation](/documentation) to discover all the functionalities
+Check the [examples](https://year-calendar.github.io/rc-year-calendar/examples) page to discover all the functionalities.
