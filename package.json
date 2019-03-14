@@ -1,6 +1,6 @@
 {
   "name": "rc-year-calendar",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Official react wrapper for the year-calendar widget",
   "main": "./dist/rc-year-calendar.js",
   "scripts": {
