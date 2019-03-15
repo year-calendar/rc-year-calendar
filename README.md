@@ -80,6 +80,31 @@ The props are the following
 | onRangeSelected | Function fired when a date range is selected. | `{ startDate, endDate }` |
 | onYearChanged | Function fired when the visible year of the calendar is changed. | `{ currentYear }` |
 
+## Language
+
+If you want to use the calendar in a different language, you should import the locale file corresponding to the language you want to use, and then set the `language` prop of the calendar:
+
+```
+import Calendar from 'rc-year-calendar';
+import 'rc-year-calendar/locales/rc-year-calendar.fr';
+```
+
+OR
+
+```
+<script src="https://unpkg.com/rc-year-calendar@latest/dist/rc-year-calendar.umd.min.js"></script>
+<script src="https://unpkg.com/rc-year-calendar@latest/locales/rc-year-calendar.fr.js"></script>
+```
+
+Then
+
+```
+render() {
+    return (
+        <Calendar language="fr" />
+    );
+}
+```
 
 ## What next
 

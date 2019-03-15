@@ -5,8 +5,10 @@
   "main": "./dist/rc-year-calendar.js",
   "scripts": {
     "watch": "rollup -c --watch",
-    "build": "rollup -c && npm run build:css",
-    "build:css": "cpy node_modules/js-year-calendar/dist/js-year-calendar.css dist --rename=rc-year-calendar.css && cpy node_modules/js-year-calendar/dist/js-year-calendar.min.css dist --rename=rc-year-calendar.min.css",
+    "clean": "rimraf dist && rimraf locales",
+    "build": "npm run clean && rollup -c && npm run build:css && npm run build:locales",
+    "build:css": "cpy node_modules/js-year-calendar/dist/*.css dist && renamer --find js-year-calendar --replace rc-year-calendar dist/*",
+    "build:locales": "cpy node_modules/js-year-calendar/locales/* locales && renamer --find js-year-calendar --replace rc-year-calendar locales/*",
     "prepare": "npm run build"
   },
   "pre-commit": [
@@ -45,6 +47,8 @@
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "cpy-cli": "^2.0.0",
+    "renamer": "^1.1.1",
+    "rimraf": "^2.6.3",
     "rollup": "^1.6.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.1",
