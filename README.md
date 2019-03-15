@@ -106,6 +106,8 @@ render() {
 }
 ```
 
+The list of available languages is available [here](https://github.com/year-calendar/js-year-calendar/tree/master/locales)
+
 ## What next
 
 Check the [examples](https://year-calendar.github.io/rc-year-calendar/examples) page to discover all the functionalities.
