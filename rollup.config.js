@@ -5,7 +5,7 @@ import { uglify } from "rollup-plugin-uglify";
 import pkg from "./package.json";
 
 var defaultConfig = {
-  input: './lib/rc-year-calendar.jsx',
+  input: './src/rc-year-calendar.jsx',
   plugins: [
     nodeResolve({
       jsnext: true,
