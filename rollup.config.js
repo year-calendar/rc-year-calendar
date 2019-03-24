@@ -1,6 +1,7 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
+import postcss from 'rollup-plugin-postcss';
 import { uglify } from "rollup-plugin-uglify";
 import pkg from "./package.json";
 
@@ -14,7 +15,8 @@ var defaultConfig = {
     babel({
       exclude: "node_modules/**",
     }),
-    commonjs()
+    commonjs(),
+    postcss()
   ],
   external: Object.keys(pkg.peerDependencies)
 };

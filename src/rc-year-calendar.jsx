@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import JsCalendar from "js-year-calendar";
+import 'js-year-calendar/dist/js-year-calendar.css';
 
 export default class Calendar extends React.Component {
     static propsTypes = {

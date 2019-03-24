@@ -6,8 +6,7 @@
   "scripts": {
     "watch": "rollup -c --watch",
     "clean": "rimraf dist && rimraf locales",
-    "build": "npm run clean && rollup -c && npm run build:css && npm run build:locales",
-    "build:css": "cpy node_modules/js-year-calendar/dist/*.css dist && renamer --find js-year-calendar --replace rc-year-calendar dist/*",
+    "build": "npm run clean && rollup -c && npm run build:locales",
     "build:locales": "cpy node_modules/js-year-calendar/locales/* locales && renamer --find js-year-calendar --replace rc-year-calendar locales/*",
     "prepare": "npm run build"
   },
@@ -53,6 +52,7 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-uglify": "^6.0.2"
   }
 }

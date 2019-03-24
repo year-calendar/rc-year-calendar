@@ -9,21 +9,14 @@ You can get the widget using the following methods:
 - From the [GitHub repository](https://github.com/year-calendar/rc-year-calendar/releases)
 - From the Node package manager, using the following command: `npm install rc-year-calendar`
 - From Yarn, using the following command: `yarn add rc-year-calendar`
-- From the CDN, by adding the following script directly in your HTML page: 
-
-`<script src="https://unpkg.com/rc-year-calendar@latest/dist/rc-year-calendar.umd.min.js"></script>`
-
-AND
-
-`<link rel="stylesheet" type="text/css" href="https://unpkg.com/rc-year-calendar@latest/dist/rc-year-calendar.min.css" />`
+- From the CDN, using the following script: `<script src="https://unpkg.com/rc-year-calendar@latest/dist/rc-year-calendar.umd.min.js"></script>`
 
 ## Usage
 
 You can create a calendar using the following javascript code :
 ```
-// Import
+// Import (only if not using the CDN installation option)
 import Calendar from 'rc-year-calendar';
-import 'rc-year-calendar/dist/rc-year-calendar.css';
 
 // Render
 render() {
