@@ -93,6 +93,26 @@ export default class Calendar extends React.Component {
         });
     }
 
+    compare(a, b) {
+        if (typeof a === "function" && typeof b === "function") {
+            return a.toString() != b.toString();
+        }
+        else if (a !== null && typeof a === "object" && b !== null && typeof b === "object") {
+            var aKeys = Object.keys(a);
+            var bKeys = Object.keys(a);
+            
+            if (aKeys.length !== bKeys.lenght) {
+                return false;
+            }
+            else {
+                return aKeys.some(key => this.compare(a[key], b[key]));
+            }
+        }
+        else {
+            return a != b;
+        }
+    }
+
     updateEvent(eventName, oldListener, newListener) {
         this.container.removeEventListener(eventName, oldListener);
         this.container.addEventListener(eventName, newListener);
@@ -103,37 +123,37 @@ export default class Calendar extends React.Component {
         const ops = [];
 
         // opsions
-        if (nextProps.allowOverlap != this.props.allowOverlap) ops.push(() => cal.setAllowOverlap(nextProps.allowOverlap, false));
-        if (nextProps.alwaysHalfDay != this.props.alwaysHalfDay) ops.push(() => cal.setAlwaysHalfDay(nextProps.alwaysHalfDay, false));
-        if (nextProps.contextMenuItems != this.props.contextMenuItems) ops.push(() => cal.setContextMenuItems(nextProps.contextMenuItems, false));
-        if (nextProps.customDayRenderer != this.props.customDayRenderer) ops.push(() => cal.setCustomDayRenderer(nextProps.customDayRenderer, false));
-        if (nextProps.customDataSourceRenderer != this.props.customDataSourceRenderer) ops.push(() => cal.setCustomDataSourceRenderer(nextProps.customDataSourceRenderer, false));
-        if (nextProps.dataSource != this.props.dataSource) ops.push(() => cal.setDataSource(nextProps.dataSource, false));
-        if (nextProps.disabledDays != this.props.disabledDays) ops.push(() => cal.setDisabledDays(nextProps.disabledDays, false));
-        if (nextProps.disabledWeekDays != this.props.disabledWeekDays) ops.push(() => cal.setDisabledWeekDays(nextProps.disabledWeekDays, false));
-        if (nextProps.displayDisabledDataSource != this.props.displayDisabledDataSource) ops.push(() => cal.setDisplayDisabledDataSource(nextProps.displayDisabledDataSource, false));
-        if (nextProps.displayHeader != this.props.displayHeader) ops.push(() => cal.setDisplayHeader(nextProps.displayHeader, false));
-        if (nextProps.displayWeekNumber != this.props.displayWeekNumber) ops.push(() => cal.setDisplayWeekNumber(nextProps.displayWeekNumber, false));
-        if (nextProps.enableContextMenu != this.props.enableContextMenu) ops.push(() => cal.setEnableContextMenu(nextProps.enableContextMenu, false));
-        if (nextProps.enableRangeSelection != this.props.enableRangeSelection) ops.push(() => cal.setEnableRangeSelection(nextProps.enableRangeSelection, false));
-        if (nextProps.hiddenWeekDays != this.props.hiddenWeekDays) ops.push(() => cal.setHiddenWeekDays(nextProps.hiddenWeekDays, false));
-        if (nextProps.language != this.props.language) ops.push(() => cal.setLanguage(nextProps.language, false));
-        if (nextProps.loadingTemplate != this.props.loadingTemplate) ops.push(() => cal.setLoadingTemplate(nextProps.loadingTemplate, false));
-        if (nextProps.maxDate != this.props.maxDate) ops.push(() => cal.setMaxDate(nextProps.maxDate, false));
-        if (nextProps.minDate != this.props.minDate) ops.push(() => cal.setMinDate(nextProps.minDate, false));
-        if (nextProps.roundRangeLimits != this.props.roundRangeLimits) ops.push(() => cal.setRoundRangeLimits(nextProps.roundRangeLimits, false));
-        if (nextProps.style != this.props.style) ops.push(() => cal.setStyle(nextProps.style, false));
-        if (nextProps.weekStart != this.props.weekStart) ops.push(() => cal.setWeekStart(nextProps.weekStart, false));
-        if (nextProps.year != this.props.year) ops.push(() => cal.setYear(nextProps.year));
+        if (this.compare(nextProps.allowOverlap, this.props.allowOverlap)) ops.push(() => cal.setAllowOverlap(nextProps.allowOverlap));
+        if (this.compare(nextProps.alwaysHalfDay, this.props.alwaysHalfDay)) ops.push(() => cal.setAlwaysHalfDay(nextProps.alwaysHalfDay, true));
+        if (this.compare(nextProps.contextMenuItems, this.props.contextMenuItems)) ops.push(() => cal.setContextMenuItems(nextProps.contextMenuItems, true));
+        if (this.compare(nextProps.customDayRenderer, this.props.customDayRenderer)) ops.push(() => cal.setCustomDayRenderer(nextProps.customDayRenderer, true));
+        if (this.compare(nextProps.customDataSourceRenderer, this.props.customDataSourceRenderer)) ops.push(() => cal.setCustomDataSourceRenderer(nextProps.customDataSourceRenderer, true));
+        if (this.compare(nextProps.dataSource, this.props.dataSource)) ops.push(() => cal.setDataSource(nextProps.dataSource, true));
+        if (this.compare(nextProps.disabledDays, this.props.disabledDays)) ops.push(() => cal.setDisabledDays(nextProps.disabledDays, true));
+        if (this.compare(nextProps.disabledWeekDays, this.props.disabledWeekDays)) ops.push(() => cal.setDisabledWeekDays(nextProps.disabledWeekDays, true));
+        if (this.compare(nextProps.displayDisabledDataSource, this.props.displayDisabledDataSource)) ops.push(() => cal.setDisplayDisabledDataSource(nextProps.displayDisabledDataSource, true));
+        if (this.compare(nextProps.displayHeader, this.props.displayHeader)) ops.push(() => cal.setDisplayHeader(nextProps.displayHeader, true));
+        if (this.compare(nextProps.displayWeekNumber, this.props.displayWeekNumber)) ops.push(() => cal.setDisplayWeekNumber(nextProps.displayWeekNumber, true));
+        if (this.compare(nextProps.enableContextMenu, this.props.enableContextMenu)) ops.push(() => cal.setEnableContextMenu(nextProps.enableContextMenu, true));
+        if (this.compare(nextProps.enableRangeSelection, this.props.enableRangeSelection)) ops.push(() => cal.setEnableRangeSelection(nextProps.enableRangeSelection, true));
+        if (this.compare(nextProps.hiddenWeekDays, this.props.hiddenWeekDays)) ops.push(() => cal.setHiddenWeekDays(nextProps.hiddenWeekDays, true));
+        if (this.compare(nextProps.language, this.props.language)) ops.push(() => cal.setLanguage(nextProps.language, true));
+        if (this.compare(nextProps.loadingTemplate, this.props.loadingTemplate)) ops.push(() => cal.setLoadingTemplate(nextProps.loadingTemplate, true));
+        if (this.compare(nextProps.maxDate, this.props.maxDate)) ops.push(() => cal.setMaxDate(nextProps.maxDate, true));
+        if (this.compare(nextProps.minDate, this.props.minDate)) ops.push(() => cal.setMinDate(nextProps.minDate, true));
+        if (this.compare(nextProps.roundRangeLimits, this.props.roundRangeLimits)) ops.push(() => cal.setRoundRangeLimits(nextProps.roundRangeLimits, true));
+        if (this.compare(nextProps.style, this.props.style)) ops.push(() => cal.setStyle(nextProps.style, true));
+        if (this.compare(nextProps.weekStart, this.props.weekStart)) ops.push(() => cal.setWeekStart(nextProps.weekStart, true));
+        if (this.compare(nextProps.year, this.props.year)) ops.push(() => cal.setYear(nextProps.year));
 
         // Events
-        if (nextProps.onDayClick != this.props.onDayClick) this.updateEvent('clickDay', this.props.onDayClick, nextProps.onDayClick);
-        if (nextProps.onDayContextMenu != this.props.onDayContextMenu) this.updateEvent('dayContextMenu', this.props.onDayContextMenu, nextProps.onDayContextMenu);
-        if (nextProps.onDayEnter != this.props.onDayEnter) this.updateEvent('mouseOnDay', this.props.onDayEnter, nextProps.onDayEnter);
-        if (nextProps.onDayLeave != this.props.onDayLeave) this.updateEvent('mouseOutDay', this.props.onDayLeave, nextProps.onDayLeave);
-        if (nextProps.onRenderEnd != this.props.onRenderEnd) this.updateEvent('renderEnd', this.props.onRenderEnd, nextProps.onRenderEnd);
-        if (nextProps.onRangeSelected != this.props.onRangeSelected) this.updateEvent('selectRange', this.props.onRangeSelected, nextProps.onRangeSelected);
-        if (nextProps.onYearChanged != this.props.onYearChanged) this.updateEvent('yearChanged', this.props.onYearChanged, nextProps.onYearChanged);
+        if (this.compare(nextProps.onDayClick, this.props.onDayClick)) this.updateEvent('clickDay', this.props.onDayClick, nextProps.onDayClick);
+        if (this.compare(nextProps.onDayContextMenu, this.props.onDayContextMenu)) this.updateEvent('dayContextMenu', this.props.onDayContextMenu, nextProps.onDayContextMenu);
+        if (this.compare(nextProps.onDayEnter, this.props.onDayEnter)) this.updateEvent('mouseOnDay', this.props.onDayEnter, nextProps.onDayEnter);
+        if (this.compare(nextProps.onDayLeave, this.props.onDayLeave)) this.updateEvent('mouseOutDay', this.props.onDayLeave, nextProps.onDayLeave);
+        if (this.compare(nextProps.onRenderEnd, this.props.onRenderEnd)) this.updateEvent('renderEnd', this.props.onRenderEnd, nextProps.onRenderEnd);
+        if (this.compare(nextProps.onRangeSelected, this.props.onRangeSelected)) this.updateEvent('selectRange', this.props.onRangeSelected, nextProps.onRangeSelected);
+        if (this.compare(nextProps.onYearChanged, this.props.onYearChanged)) this.updateEvent('yearChanged', this.props.onYearChanged, nextProps.onYearChanged);
 
         if (ops.length > 0) {
             ops.forEach(op => op());
