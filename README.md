@@ -5,6 +5,7 @@ Official React.js wrapper for the year-calendar widget. https://year-calendar.gi
 ![](https://year-calendar.github.io/assets/img/calendar.png)
 
 [![CircleCI](https://img.shields.io/circleci/project/github/year-calendar/rc-year-calendar/master.svg)](https://circleci.com/gh/year-calendar/rc-year-calendar/tree/master)
+[![NPM](https://img.shields.io/npm/dw/rc-year-calendar.svg)](https://www.npmjs.com/package/rc-year-calendar)
 
 ## Installation
 You can get the widget using the following methods:
