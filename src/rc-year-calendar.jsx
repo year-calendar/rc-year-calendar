@@ -52,6 +52,8 @@ export default class Calendar extends React.Component {
         onYearChanged: PropTypes.func
     };
 
+    static locales = JsCalendar.locales; // Map the "locales" property to the js-year-calendar "locales" property, in order to make the locale files compatible
+
     constructor(props) {
         super(props);
     }
