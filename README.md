@@ -7,6 +7,11 @@ Official React.js wrapper for the year-calendar widget. https://year-calendar.gi
 [![CircleCI](https://img.shields.io/circleci/project/github/year-calendar/rc-year-calendar/master.svg)](https://circleci.com/gh/year-calendar/rc-year-calendar/tree/master)
 [![NPM](https://img.shields.io/npm/dw/rc-year-calendar.svg)](https://www.npmjs.com/package/rc-year-calendar)
 
+This library is also available for:
+
+[![Pure javascript](https://year-calendar.github.io/assets/img/js.png)](https://github.com/year-calendar/js-year-calendar) 
+[![Vue.js](https://year-calendar.github.io/assets/img/vue.png)](https://github.com/year-calendar/v-year-calendar)
+
 ## Installation
 You can get the widget using the following methods:
 - From the [GitHub repository](https://github.com/year-calendar/rc-year-calendar/releases)
