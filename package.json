@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/year-calendar/rc-year-calendar/issues"
   },
-  "homepage": "https://github.com/year-calendar/rc-year-calendar",
+  "homepage": "https://year-calendar.github.io/",
   "dependencies": {
     "js-year-calendar": "^1.0.0-alpha.6"
   },
