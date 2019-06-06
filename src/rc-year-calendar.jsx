@@ -99,6 +99,9 @@ export default class Calendar extends React.Component {
         if (typeof a === "function" && typeof b === "function") {
             return a.toString() != b.toString();
         }
+        else if (a instanceof Date && b instanceof Date) {
+            return a.getTime() != b.getTime();
+        }
         else if (a !== null && typeof a === "object" && b !== null && typeof b === "object") {
             var aKeys = Object.keys(a);
             var bKeys = Object.keys(a);
