@@ -33,7 +33,7 @@
   },
   "homepage": "https://year-calendar.github.io/",
   "dependencies": {
-    "js-year-calendar": "^1.0.0-alpha.6"
+    "js-year-calendar": "^1.0.0-alpha.7"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
