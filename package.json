@@ -1,6 +1,6 @@
 {
   "name": "rc-year-calendar",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.1",
   "description": "Official react wrapper for the year-calendar widget",
   "main": "./dist/rc-year-calendar.js",
   "scripts": {
@@ -33,27 +33,27 @@
   },
   "homepage": "https://year-calendar.github.io/",
   "dependencies": {
-    "js-year-calendar": "^1.0.0-alpha.7"
+    "js-year-calendar": "^1.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.3",
-    "@babel/plugin-transform-modules-umd": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.3.1",
-    "cpy-cli": "^2.0.0",
-    "renamer": "^1.1.1",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.6.0",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.2.1",
-    "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-uglify": "^6.0.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-modules-umd": "^7.9.0",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "cpy-cli": "^3.1.0",
+    "renamer": "^1.1.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.2.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-postcss": "^2.5.0",
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }
