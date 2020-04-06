@@ -104,7 +104,7 @@ export default class Calendar extends React.Component {
         }
         else if (a !== null && typeof a === "object" && b !== null && typeof b === "object") {
             var aKeys = Object.keys(a);
-            var bKeys = Object.keys(a);
+            var bKeys = Object.keys(b);
             
             if (aKeys.length !== bKeys.length) {
                 return true;
