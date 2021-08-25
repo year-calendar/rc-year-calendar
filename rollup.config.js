@@ -1,8 +1,8 @@
-import babel from "rollup-plugin-babel";
+import { babel } from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import postcss from 'rollup-plugin-postcss';
-import { uglify } from "rollup-plugin-uglify";
+import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
 
 var defaultConfig = {
@@ -36,7 +36,7 @@ export default [
       file: './dist/rc-year-calendar.min.js',
       format: "cjs"
     },
-    plugins: [uglify()]
+    plugins: [terser()]
   },
 
   // UMD
@@ -58,6 +58,6 @@ export default [
       file: './dist/rc-year-calendar.umd.min.js',
       format: "umd"
     },
-    plugins: [uglify()]
+    plugins: [terser()]
   }
 ];
