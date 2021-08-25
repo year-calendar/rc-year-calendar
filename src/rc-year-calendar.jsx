@@ -82,7 +82,9 @@ export default class Calendar extends React.Component {
             roundRangeLimits: this.props.roundRangeLimits,
             style: this.props.style,
             weekStart: this.props.weekStart,
+            numberMonthsDisplayed: this.props.numberMonthsDisplayed,
             startYear: this.props.year != null ? this.props.year : this.props.defaultYear,
+            startDate: this.props.startDate != null ? this.props.startDate : this.props.defaultStartDate,
 
             // Events
             clickDay: this.props.onDayClick,
@@ -91,6 +93,7 @@ export default class Calendar extends React.Component {
             mouseOutDay: this.props.onDayLeave,
             renderEnd: this.props.onRenderEnd,
             selectRange: this.props.onRangeSelected,
+            periodChanged: this.props.onPeriodChanged,
             yearChanged: this.props.onYearChanged
         });
     }
@@ -149,6 +152,8 @@ export default class Calendar extends React.Component {
         if (this.compare(nextProps.roundRangeLimits, this.props.roundRangeLimits)) ops.push(() => cal.setRoundRangeLimits(nextProps.roundRangeLimits, true));
         if (this.compare(nextProps.style, this.props.style)) ops.push(() => cal.setStyle(nextProps.style, true));
         if (this.compare(nextProps.weekStart, this.props.weekStart)) ops.push(() => cal.setWeekStart(nextProps.weekStart, true));
+        if (this.compare(nextProps.numberMonthsDisplayed, this.props.numberMonthsDisplayed)) ops.push(() => cal.setWeekStart(nextProps.numberMonthsDisplayed, true));
+        if (this.compare(nextProps.startDate, this.props.startDate)) ops.push(() => cal.setStartDate(nextProps.startDate));
         if (this.compare(nextProps.year, this.props.year)) ops.push(() => cal.setYear(nextProps.year));
 
         // Events
@@ -158,12 +163,13 @@ export default class Calendar extends React.Component {
         if (this.compare(nextProps.onDayLeave, this.props.onDayLeave)) this.updateEvent('mouseOutDay', this.props.onDayLeave, nextProps.onDayLeave);
         if (this.compare(nextProps.onRenderEnd, this.props.onRenderEnd)) this.updateEvent('renderEnd', this.props.onRenderEnd, nextProps.onRenderEnd);
         if (this.compare(nextProps.onRangeSelected, this.props.onRangeSelected)) this.updateEvent('selectRange', this.props.onRangeSelected, nextProps.onRangeSelected);
+        if (this.compare(nextProps.onPeriodChanged, this.props.onPeriodChanged)) this.updateEvent('periodChanged', this.props.onPeriodChanged, nextProps.onPeriodChanged);
         if (this.compare(nextProps.onYearChanged, this.props.onYearChanged)) this.updateEvent('yearChanged', this.props.onYearChanged, nextProps.onYearChanged);
 
         if (ops.length > 0) {
             ops.forEach(op => op());
 
-            if (nextProps.year == this.props.year) {
+            if (nextProps.year == this.props.year && nextProps.startDate == this.props.startDate) {
                 // If the year has changed, the calendar has automatically been rendered
                 cal.render();
             }
